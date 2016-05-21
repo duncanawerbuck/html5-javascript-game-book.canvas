@@ -7,8 +7,6 @@
     "dev": "lite-server"
   },
   "dependencies": {
-    "lite-server": "^2.2.0",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "lite-server": "^2.2.0"

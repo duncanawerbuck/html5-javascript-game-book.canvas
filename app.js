@@ -1,3 +1,7 @@
 console.clear();
 
-console.log("Test2");
+{
+    let canvas = document.createElement('canvas');
+    
+    helpers.setupCanvas(document.body, canvas);
+}

@@ -2,13 +2,17 @@ const helpers = {
     setupCanvas: setupCanvas
 }
 
-function setupCanvas(documentBody, el) {
-    el.setAttribute('width', '256');
-    el.setAttribute('height', '256');
+function setupCanvas(document) {
+    
+    let canvas = document.createElement('canvas');
+    
+    canvas.setAttribute('width', '256');
+    canvas.setAttribute('height', '256');
 
-    el.style.border = '1px dashed black';
+    canvas.style.border = '1px dashed black';
 
-    documentBody.appendChild(el);
+    document.body.appendChild(canvas);
 
-    let ctx = el.getContext('2d');
+    const ctx = canvas.getContext('2d');
+    return ctx;
 }

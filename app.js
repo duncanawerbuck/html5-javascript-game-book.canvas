@@ -1,7 +1,15 @@
 console.clear();
 
-{
-    let canvas = document.createElement('canvas');
+{    
+    const ctx = helpers.setupCanvas(document);
     
-    helpers.setupCanvas(document.body, canvas);
+    // set the line style options
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    
+    // draw the line
+    ctx.beginPath();
+    ctx.moveTo(0,0);
+    ctx.lineTo(128,128);
+    ctx.stroke();
 }

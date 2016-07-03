@@ -1,6 +1,36 @@
 const helpers = {
+    drawComplexShape: drawComplexShape,
     drawLine: drawLine,
     setupCanvas: setupCanvas
+}
+
+function drawComplexShape(ctx, coords, opts) {
+
+    ctx.strokeStyle = opts.strokeStyle;
+    ctx.lineWidth = opts.lineWidth;
+    ctx.lineJoin = opts.lineJoin;
+    ctx.fillStyle = opts.fillStyle;
+
+    ctx.beginPath();
+
+    // start drawing from the last point
+    let lastPoint = coords.length - 1;
+    ctx.moveTo(
+        coords[lastPoint][0],
+        coords[lastPoint][1]
+    );
+
+    // plot each point using a loop
+    coords.forEach(point => {
+        ctx.lineTo(point[0], point[1]);
+    });
+
+    if (opts.closePath) {
+        ctx.closePath();
+    }
+
+    ctx.fill();
+    ctx.stroke();
 }
 
 function drawLine(ctx, opts) {
@@ -20,7 +50,7 @@ function drawLine(ctx, opts) {
         }
         ctx.lineCap = lc;
     }
-    
+
     ctx.stroke();
 }
 
